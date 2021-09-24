@@ -9,13 +9,14 @@ import { Typography } from 'antd';
 const { Title } = Typography;
 
 interface MyTitleProps {
-  title: string
+  title: string,
+  level?: 1 | 2 | 3 | 4 | 5
 }
 
 const MyTitle = (props: MyTitleProps) => {
-  const { title } = props;
+  const { title, level } = props;
   return (
-    <Title level={3}>
+    <Title level={level || 3}>
       {title}
     </Title>
   );

@@ -21,4 +21,6 @@ export { default as CommonHorizFormHook } from '@components/form/CommonForm';
 export type { IFormColumns } from '@components/form/CommonForm';
 // 文档
 export { default as LinkNote } from '@components/document/LinkNote';
+export { default as CodeBox } from '@components/CodeBox';
+
 

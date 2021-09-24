@@ -8,16 +8,17 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface IProps {
-  code: string
+  code: string,
+  width?: number
 }
 
 const CodeBox = (props: IProps) => {
-  const { code } = props;
+  const { code, width } = props;
   return (
     <SyntaxHighlighter
       language="javascript"
       style={{ ...github }}
-      customStyle={{ width: '100%', padding: 20, marginBottom: 10 }}
+      customStyle={{ width: width || '100%', padding: 20, marginBottom: 10 }}
       showLineNumbers
     >
       {code}

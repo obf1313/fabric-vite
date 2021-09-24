@@ -5,8 +5,7 @@
  **/
 import { Card, Divider } from 'antd';
 import React, { useEffect } from 'react';
-import CodeBox from '@components/CodeBox';
-import { MyTitle } from '@components/index';
+import { MyTitle, CodeBox } from '@components/index';
 
 const CanvasIntro = () => {
   useEffect(() => {

@@ -6,9 +6,7 @@
 import React, { useEffect } from 'react';
 import { Card, Divider } from 'antd';
 import { fabric } from 'fabric';
-import CodeBox from '@components/CodeBox';
-import LinkNote from '@components/document/LinkNote';
-import { MyTitle } from '@components/index';
+import { MyTitle, CodeBox, LinkNote } from '@components/index';
 
 const FabricCanvas = () => {
   useEffect(() => {
