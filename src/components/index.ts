@@ -19,3 +19,6 @@ export { default as SearchInlineForm } from '@components/form/SearchForm';
 export type { ISearchFormColumns } from '@components/form/SearchForm';
 export { default as CommonHorizFormHook } from '@components/form/CommonForm';
 export type { IFormColumns } from '@components/form/CommonForm';
+// 文档
+export { default as LinkNote } from '@components/document/LinkNote';
+

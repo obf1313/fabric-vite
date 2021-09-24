@@ -41,25 +41,26 @@ const Home = (props: IProps) => {
       id: '1',
       name: 'Canvas 介绍',
       url: 'canvasIntro',
-      menuType: 0,
-      children: []
     }, {
       id: '2',
       name: 'Fabric.js 介绍',
       url: 'fabricIntro',
-      menuType: 0,
-      children: []
     }, {
       id: '3',
       name: '文档介绍',
       url: '',
-      menuType: 0,
       children: [{
         id: '3-1',
-        name: '画布 - Canvas / StaticCanvas',
+        name: '画布',
         url: 'fabricCanvas',
-        menuType: 0,
-        children: []
+      }, {
+        id: '3-2',
+        name: '图形类',
+        url: 'graphClass',
+      }, {
+        id: '3-3',
+        name: '监听事件',
+        url: 'listener',
       }]
     }];
     setMenuList(menuList);

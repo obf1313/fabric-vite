@@ -16,7 +16,6 @@ export interface BaseEntity {
  * **/
 export interface MenuData extends BaseEntity {
   url: string,
-  menuType: number,
   children?: Array<MenuData>
 }
 /**

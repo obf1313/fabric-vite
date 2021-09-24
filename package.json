@@ -9,19 +9,23 @@
   "dependencies": {
     "antd": "^4.16.13",
     "axios": "^0.21.4",
+    "fabric": "^4.6.0",
     "path": "^0.12.7",
     "qs": "^6.10.1",
     "react": "^17.0.0",
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.0",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "react-syntax-highlighter": "^15.4.4"
   },
   "devDependencies": {
+    "@types/fabric": "^4.5.3",
     "@types/node": "^16.9.6",
     "@types/qs": "^6.9.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.3.0",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "@vitejs/plugin-react": "^1.0.0",

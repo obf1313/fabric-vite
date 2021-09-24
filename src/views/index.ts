@@ -12,3 +12,5 @@ export { default as NotFound } from '@views/error/NotFound';
 export { default as CanvasIntro } from '@views/fabric/CanvasIntro';
 export { default as FabricCanvas } from '@views/fabric/FabricCanvas';
 export { default as FabricIntro } from '@views/fabric/FabricIntro';
+export { default as GraphClass } from '@views/fabric/GraphClass';
+export { default as Listener } from '@views/fabric/Listener';
