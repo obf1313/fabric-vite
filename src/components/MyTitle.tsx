@@ -4,6 +4,9 @@
  * @createTime: 2020/7/21 9:30
  **/
 import React from 'react';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 interface MyTitleProps {
   title: string
@@ -12,9 +15,9 @@ interface MyTitleProps {
 const MyTitle = (props: MyTitleProps) => {
   const { title } = props;
   return (
-    <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: 2 }}>
+    <Title level={3}>
       {title}
-    </div>
+    </Title>
   );
 };
 export default MyTitle;

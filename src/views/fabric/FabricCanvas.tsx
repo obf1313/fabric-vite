@@ -4,13 +4,11 @@
  * @createTime: 2021/9/24 10:29
  **/
 import React, { useEffect } from 'react';
-import { Button, Card, Divider, Typography } from 'antd';
+import { Card, Divider } from 'antd';
 import { fabric } from 'fabric';
 import CodeBox from '@components/CodeBox';
-import { Link } from 'react-router-dom';
 import LinkNote from '@components/document/LinkNote';
-
-const { Title } = Typography;
+import { MyTitle } from '@components/index';
 
 const FabricCanvas = () => {
   useEffect(() => {
@@ -77,19 +75,19 @@ const FabricCanvas = () => {
     'staticCanvas.add(rect);';
   return (
     <Card>
-      <Title level={3}>画布</Title>
+      <MyTitle title="画布" />
       <p>
         Fabric.js 有两种不同的画布，一种是 Canvas，另一种是 StaticCanvas，顾名思义，普通画布和静态画布的区别，下面我们分别使用两个实例来看他们之间的区别。
       </p>
       <Divider />
-      <Title level={3}>Canvas</Title>
+      <MyTitle title="Canvas" />
       <p>
         我们画了一个 200 * 100 的矩形，画布使用的是 fabric.Canvas，其中的矩形可以随意的拖动拉伸。
       </p>
       <CodeBox code={code} />
       <canvas id="fabric-canvas" />
       <Divider />
-      <Title level={3}>StaticCanvas</Title>
+      <MyTitle title="StaticCanvas" />
       <p>
         我们画了一个 200 * 100 的矩形，画布使用的是 fabric.StaticCanvas，其中的矩形不能支持拖动拉伸，也就意味着该画布内所有的元素都不能拖动。
       </p>
