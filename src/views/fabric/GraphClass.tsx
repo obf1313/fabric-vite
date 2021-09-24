@@ -148,40 +148,45 @@ const GraphClass = () => {
     path.set({ left: 120, top: 120, fill:'red' });
     fabricCanvas.add(path);
   };
+  const funcToString = (str: string) => {
+    const firstIndex = str.indexOf('{');
+    const lastIndex = str.lastIndexOf('}');
+    return str.substring(firstIndex + 2, lastIndex - 3).replace(/      /g, '  ').replace(/    /g, '');
+  };
   return (
     <Card>
       <MyTitle title="图形类" />
       <Row>
         <div style={{ width: '100%', height: 300, overflow: 'auto' }}>
           <MyTitle title="线" level={5} />
-          <CodeBox code={initLine.toString()} />
+          <CodeBox code={funcToString(initLine.toString())} />
           <Divider />
           <MyTitle title="圆" level={5} />
-          <CodeBox code={initCircle.toString()} />
+          <CodeBox code={funcToString(initCircle.toString())} />
           <Divider />
           <MyTitle title="三角形" level={5} />
-          <CodeBox code={initTriangle.toString()} />
+          <CodeBox code={funcToString(initTriangle.toString())} />
           <Divider />
           <MyTitle title="椭圆" level={5} />
-          <CodeBox code={initEllipse.toString()} />
+          <CodeBox code={funcToString(initEllipse.toString())} />
           <Divider />
           <MyTitle title="矩形" level={5} />
-          <CodeBox code={initRect.toString()} />
+          <CodeBox code={funcToString(initRect.toString())} />
           <Divider />
           <MyTitle title="折线" level={5} />
-          <CodeBox code={initPolyLine.toString()} />
+          <CodeBox code={funcToString(initPolyLine.toString())} />
           <Divider />
           <MyTitle title="多边形" level={5} />
-          <CodeBox code={initPolygon.toString()} />
+          <CodeBox code={funcToString(initPolygon.toString())} />
           <Divider />
           <MyTitle title="文本" level={5} />
-          <CodeBox code={initText.toString()} />
+          <CodeBox code={funcToString(initText.toString())} />
           <Divider />
           <MyTitle title="图片" level={5} />
-          <CodeBox code={initImage.toString()} />
+          <CodeBox code={funcToString(initImage.toString())} />
           <Divider />
           <MyTitle title="路径" level={5} />
-          <CodeBox code={initPath.toString()} />
+          <CodeBox code={funcToString(initPath.toString())} />
         </div>
         <canvas id="graph-canvas" style={{ marginTop: 10 }} />
       </Row>
