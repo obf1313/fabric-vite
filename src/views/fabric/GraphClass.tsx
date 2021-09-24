@@ -31,7 +31,7 @@ const GraphClass = () => {
   const initCanvas = () => {
     const fabricCanvas = new fabric.Canvas('graph-canvas', {
       width: 950,
-      height: 600,
+      height: 460,
       backgroundColor: '#ddd'
     });
     setFabricCanvas(fabricCanvas);
@@ -152,7 +152,7 @@ const GraphClass = () => {
     <Card>
       <MyTitle title="图形类" />
       <Row>
-        <div style={{ width: '100%', height: 400, overflow: 'auto' }}>
+        <div style={{ width: '100%', height: 300, overflow: 'auto' }}>
           <MyTitle title="线" level={5} />
           <CodeBox code={initLine.toString()} />
           <Divider />
