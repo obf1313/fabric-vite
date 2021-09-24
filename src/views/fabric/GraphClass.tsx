@@ -5,7 +5,7 @@
  **/
 import React, { useEffect, useState } from 'react';
 import { Card, Divider, Row } from 'antd';
-import { MyTitle, CodeBox } from '@components/index';
+import { MyTitle, CodeBox, LinkNote } from '@components/index';
 import { fabric } from 'fabric';
 
 const GraphClass = () => {
@@ -156,40 +156,76 @@ const GraphClass = () => {
   return (
     <Card>
       <MyTitle title="图形类" />
-      <Row>
-        <div style={{ width: '100%', height: 300, overflow: 'auto' }}>
-          <MyTitle title="线" level={5} />
-          <CodeBox code={funcToString(initLine.toString())} />
-          <Divider />
-          <MyTitle title="圆" level={5} />
-          <CodeBox code={funcToString(initCircle.toString())} />
-          <Divider />
-          <MyTitle title="三角形" level={5} />
-          <CodeBox code={funcToString(initTriangle.toString())} />
-          <Divider />
-          <MyTitle title="椭圆" level={5} />
-          <CodeBox code={funcToString(initEllipse.toString())} />
-          <Divider />
-          <MyTitle title="矩形" level={5} />
-          <CodeBox code={funcToString(initRect.toString())} />
-          <Divider />
-          <MyTitle title="折线" level={5} />
-          <CodeBox code={funcToString(initPolyLine.toString())} />
-          <Divider />
-          <MyTitle title="多边形" level={5} />
-          <CodeBox code={funcToString(initPolygon.toString())} />
-          <Divider />
-          <MyTitle title="文本" level={5} />
-          <CodeBox code={funcToString(initText.toString())} />
-          <Divider />
-          <MyTitle title="图片" level={5} />
-          <CodeBox code={funcToString(initImage.toString())} />
-          <Divider />
-          <MyTitle title="路径" level={5} />
-          <CodeBox code={funcToString(initPath.toString())} />
-        </div>
-        <canvas id="graph-canvas" style={{ marginTop: 10 }} />
-      </Row>
+      <div style={{ width: '100%', height: 300, overflow: 'auto' }}>
+        <MyTitle title="线" level={5} />
+        <CodeBox code={funcToString(initLine.toString())} />
+        <Divider />
+        <MyTitle title="圆" level={5} />
+        <CodeBox code={funcToString(initCircle.toString())} />
+        <Divider />
+        <MyTitle title="三角形" level={5} />
+        <CodeBox code={funcToString(initTriangle.toString())} />
+        <Divider />
+        <MyTitle title="椭圆" level={5} />
+        <CodeBox code={funcToString(initEllipse.toString())} />
+        <Divider />
+        <MyTitle title="矩形" level={5} />
+        <CodeBox code={funcToString(initRect.toString())} />
+        <Divider />
+        <MyTitle title="折线" level={5} />
+        <CodeBox code={funcToString(initPolyLine.toString())} />
+        <Divider />
+        <MyTitle title="多边形" level={5} />
+        <CodeBox code={funcToString(initPolygon.toString())} />
+        <Divider />
+        <MyTitle title="文本" level={5} />
+        <CodeBox code={funcToString(initText.toString())} />
+        <Divider />
+        <MyTitle title="图片" level={5} />
+        <CodeBox code={funcToString(initImage.toString())} />
+        <Divider />
+        <MyTitle title="路径" level={5} />
+        <CodeBox code={funcToString(initPath.toString())} />
+      </div>
+      <Divider />
+      <canvas id="graph-canvas" />
+      <Divider />
+      <LinkNote
+        linkList={[{
+          name: '线 fabric.Line',
+          url: 'http://fabricjs.com/docs/fabric.Line.html'
+        }, {
+          name: '圆 fabric.Circle',
+          url: 'http://fabricjs.com/docs/fabric.Circle.html'
+        }, {
+          name: '三角形 fabric.Triangle',
+          url: 'http://fabricjs.com/docs/fabric.Triangle.html'
+        }, {
+          name: '椭圆 fabric.Ellipse',
+          url: 'http://fabricjs.com/docs/fabric.Ellipse.html'
+        }, {
+          name: '矩形 fabric.Rect',
+          url: 'http://fabricjs.com/docs/fabric.Rect.html'
+        }, {
+          name: '折线 fabric.Polyline',
+          url: 'http://fabricjs.com/docs/fabric.Polyline.html'
+        }, {
+          name: '多边形 fabric.Polygon',
+          url: 'http://fabricjs.com/docs/fabric.Polygon.html'
+        }, {
+          name: '文本 fabric.Text',
+          url: 'http://fabricjs.com/docs/fabric.Text.html'
+        }, {
+          name: '可编辑文本 fabric.IText',
+          url: 'http://fabricjs.com/docs/fabric.IText.html'
+        }, {
+          name: '图片 fabric.Image',
+          url: 'http://fabricjs.com/docs/fabric.Image.html'
+        }, {
+          name: '路径 fabric.Path',
+          url: 'http://fabricjs.com/docs/fabric.Path.html'
+        }]}
+      />
     </Card>
   );
 };
