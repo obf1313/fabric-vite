@@ -11,8 +11,6 @@ import { initMenu } from '@utils/CommonFunc';
 import { MenuData } from '@utils/CommonInterface';
 import { PageSessionList, platform, projectName } from '@utils/CommonVars';
 import logo from '@static/images/logo.png';
-import { HomeContext } from '../../index';
-import { post } from '@utils/Ajax';
 import './index.less';
 
 const { Content, Sider } = Layout;
@@ -33,8 +31,6 @@ const Home = (props: IProps) => {
     }
   });
   const [menuList, setMenuList] = useState<Array<MenuData>>([]);
-  const [selectedKeys, setSelectedKeys] = useState<Array<string>>([]);
-  const [openKeys, setOpenKeys] = useState<Array<string>>(menuList.map((menu: MenuData) => menu.id));
   const [collapsed, setCollapsed] = useState<boolean>(false);
   useEffect(() => {
     getMenuList();
@@ -43,11 +39,28 @@ const Home = (props: IProps) => {
   const getMenuList = () => {
     const menuList: Array<MenuData> = [{
       id: '1',
-      name: '测试',
-      icon: '',
-      url: '',
+      name: 'Canvas 介绍',
+      url: 'canvasIntro',
       menuType: 0,
       children: []
+    }, {
+      id: '2',
+      name: 'Fabric.js 介绍',
+      url: 'fabricIntro',
+      menuType: 0,
+      children: []
+    }, {
+      id: '3',
+      name: '文档介绍',
+      url: '',
+      menuType: 0,
+      children: [{
+        id: '3-1',
+        name: '画布 - Canvas / StaticCanvas',
+        url: 'fabricCanvas',
+        menuType: 0,
+        children: []
+      }]
     }];
     setMenuList(menuList);
   };
@@ -65,10 +78,6 @@ const Home = (props: IProps) => {
         <div className="menu">
           <Menu
             theme="dark"
-            selectedKeys={selectedKeys}
-            openKeys={openKeys}
-            onSelect={(item: any) => setSelectedKeys(item.keyPath)}
-            onOpenChange={(openKeys: any) => setOpenKeys(openKeys)}
             mode="inline"
           >
             {initMenu(menuList, platform)}

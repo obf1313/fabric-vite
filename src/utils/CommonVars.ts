@@ -40,13 +40,6 @@ export const iconUrl: string = iconfont;
  **/
 export const projectName: string = 'Fabric.js';
 /**
- * 机构启用禁用状态
- * **/
-export enum OrganizationEnable {
-  ENABLE = 1, // 启用
-  FORBID = 0 // 禁用
-}
-/**
  * 文件后缀
  **/
 export const fileAccept = {
@@ -77,13 +70,6 @@ export enum RuleType {
   url = 'url',
   password = 'password',
   selectRequired = 'selectRequired',
-}
-/**
- * 角色类型
-**/
-export enum RoleType {
-  Admin = 0,
-  User = 1
 }
 export enum IPageSession { // page current的类型
   demo = '-demo', // 示例

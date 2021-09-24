@@ -6,7 +6,7 @@
 import React, { createContext, useReducer } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ErrorBoundary } from '@components/index';
-import { NotFound, Home, Welcome } from '@views/index';
+import { NotFound, Home, Welcome, CanvasIntro, FabricIntro, FabricCanvas } from '@views/index';
 import { platform } from '@utils/CommonVars';
 import { homeInit, homeReducer } from '@views/home/HomeReducer';
 
@@ -22,6 +22,9 @@ const App = () => {
             <Switch>
               <ErrorBoundary>
                 <Route exact path={platform} component={Welcome} />
+                <Route exact path={platform + 'canvasIntro'} component={CanvasIntro} />
+                <Route exact path={platform + 'fabricIntro'} component={FabricIntro} />
+                <Route exact path={platform + 'fabricCanvas'} component={FabricCanvas} />
               </ErrorBoundary>
               <Route component={NotFound} />
             </Switch>
