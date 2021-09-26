@@ -9,7 +9,7 @@ import { ErrorBoundary } from '@components/index';
 import {
   NotFound, Home, Welcome, CanvasIntro, FabricIntro,
   FabricCanvas, GraphClass, Listener, Brush, Effect,
-  Serialize
+  Serialize, CommonUse
 } from '@views/index';
 import { platform } from '@utils/CommonVars';
 import { homeInit, homeReducer } from '@views/home/HomeReducer';
@@ -34,6 +34,7 @@ const App = () => {
                 <Route exact path={platform + 'brush'} component={Brush} />
                 <Route exact path={platform + 'effect'} component={Effect} />
                 <Route exact path={platform + 'serialize'} component={Serialize} />
+                <Route exact path={platform + 'commonUse'} component={CommonUse} />
               </ErrorBoundary>
               <Route component={NotFound} />
             </Switch>

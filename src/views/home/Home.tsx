@@ -74,6 +74,10 @@ const Home = (props: IProps) => {
         name: '序列化和反序列化',
         url: 'serialize',
       }]
+    }, {
+      id: '4',
+      name: '常用方法',
+      url: 'commonUse',
     }];
     setMenuList(menuList);
   };
