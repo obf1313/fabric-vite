@@ -27,25 +27,10 @@ const Welcome = () => {
     }
   }, []);
   return (
-    <>
-      <PageHeader
-        title="工作台"
-        style={{ margin: '-10px -10px 10px -10px', backgroundColor: '#fff' }}
-      >
-        <Row justify="space-between">
-          <Space size={20}>
-            <Avatar
-              size={{ xs: 24, sm: 32, md: 40, lg: 50, xl: 64, xxl: 80 }}
-              src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
-            />
-            <div>
-              <div style={{ fontSize: 20, fontWeight: 500, marginBottom: 10 }}>{welcomeTime}，{homeState.userInfo.name}，祝你开心每一天！</div>
-              <Text type="secondary">{homeState.userInfo.roleName}</Text>
-            </div>
-          </Space>
-        </Row>
-      </PageHeader>
-    </>
+    <PageHeader
+      title="Fabric.js 中文介绍，请点击右边目录查看详情。"
+      style={{ margin: '-10px -10px 10px -10px', backgroundColor: '#fff' }}
+    />
   );
 };
 export default Welcome;
