@@ -4,9 +4,10 @@
  * @createTime: 2021/9/24 14:00
  **/
 import React, { useEffect, useState } from 'react';
-import { Card, Divider, Row } from 'antd';
-import { MyTitle } from '@components/index';
+import { Card, Divider } from 'antd';
+import { CodeBox, LinkNote, MyTitle } from '@components/index';
 import { fabric } from 'fabric';
+import { funcToString } from '@utils/CommonFunc';
 
 const Listener = () => {
   const [fabricCanvas, setFabricCanvas] = useState<any>();
@@ -36,11 +37,20 @@ const Listener = () => {
       top: 20,
       left: 50
     });
+    const text1 = new fabric.Text('大家不好', {
+      fontSize: 24,
+      top: 60,
+      left: 200
+    });
     fabricCanvas.add(text);
+    fabricCanvas.add(text1);
   };
   // 初始化监听器
   const initListener = () => {
     fabricCanvas.on('selection:created', (o: any) => {
+      setSelectText(o.target.text);
+    });
+    fabricCanvas.on('selection:updated', (o: any) => {
       setSelectText(o.target.text);
     });
   };
@@ -61,8 +71,17 @@ const Listener = () => {
       </ul>
       <Divider />
       <MyTitle title="示例" />
-      <p>选中元素的文本内容：{selectText}</p>
+      <p>下面来看一个例子，我们创建了两个文本元素，建立了两个监听事件，选中事件和选中事件更新，在选中文本或者切换文本时显示选中文本的文字。</p>
+      <CodeBox code={funcToString(initListener.toString())} />
+      <p>选中元素的文本内容：<span style={{ color: 'red' }}>{selectText}</span></p>
       <canvas id="listener-canvas" />
+      <Divider />
+      <LinkNote
+        linkList={[{
+          name: '监听器 fabric.Canvas.Fires',
+          url: 'http://fabricjs.com/docs/fabric.Canvas.html'
+        }]}
+      />
     </Card>
   );
 };

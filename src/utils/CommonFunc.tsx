@@ -273,3 +273,11 @@ export const myCardProps = (title: string | React.ReactNode, style?: CSSProperti
     size: size || 'small'
   });
 };
+/**
+ * 函数转成字符串
+**/
+export const funcToString = (str: string) => {
+  const firstIndex = str.indexOf('{');
+  const lastIndex = str.lastIndexOf('}');
+  return str.substring(firstIndex + 2, lastIndex - 3).replace(/      /g, '  ').replace(/    /g, '');
+};

@@ -4,9 +4,10 @@
  * @createTime: 2021/9/24 13:59
  **/
 import React, { useEffect, useState } from 'react';
-import { Card, Divider, Row } from 'antd';
+import { Card, Divider } from 'antd';
 import { MyTitle, CodeBox, LinkNote } from '@components/index';
 import { fabric } from 'fabric';
+import { funcToString } from '@utils/CommonFunc';
 
 const GraphClass = () => {
   const [fabricCanvas, setFabricCanvas] = useState<any>();
@@ -147,11 +148,6 @@ const GraphClass = () => {
     const path = new fabric.Path('M 0 0 L 200 100 L 170 200 z');
     path.set({ left: 120, top: 120, fill:'red' });
     fabricCanvas.add(path);
-  };
-  const funcToString = (str: string) => {
-    const firstIndex = str.indexOf('{');
-    const lastIndex = str.lastIndexOf('}');
-    return str.substring(firstIndex + 2, lastIndex - 3).replace(/      /g, '  ').replace(/    /g, '');
   };
   return (
     <Card>

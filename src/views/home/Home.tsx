@@ -61,6 +61,18 @@ const Home = (props: IProps) => {
         id: '3-3',
         name: '监听事件',
         url: 'listener',
+      }, {
+        id: '3-4',
+        name: '涂鸦',
+        url: 'brush',
+      }, {
+        id: '3-5',
+        name: '效果',
+        url: 'effect',
+      }, {
+        id: '3-6',
+        name: '工具类',
+        url: 'util',
       }]
     }];
     setMenuList(menuList);
