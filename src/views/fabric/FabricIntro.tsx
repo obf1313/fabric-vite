@@ -8,6 +8,10 @@ import { Card, Divider } from 'antd';
 import { MyTitle } from '@components/index';
 
 const FabricIntro = () => {
+  // 打开官网介绍
+  const openHome = (url: string) => {
+    window.open('https://note.youdao.com/s/XqLk2oSs');
+  };
   return (
     <Card>
       <MyTitle title="简介" />
@@ -25,6 +29,15 @@ const FabricIntro = () => {
         <li>生成 Canvas 对象自带拖拉拽功能。</li>
         <li>画布的平移、缩放。</li>
       </ul>
+      <Divider />
+      <MyTitle title="官网介绍" />
+      <p>因为需要放一些图，所以我写到有道云笔记里了，可点击链接查看。</p>
+      <p>
+        <a onClick={() => openHome('https://note.youdao.com/s/XqLk2oSs')}>官网介绍</a>
+      </p>
+      <p>
+        <a onClick={() => openHome('http://fabricjs.com')}>官网</a>
+      </p>
     </Card>
   );
 };
