@@ -5,7 +5,7 @@
  **/
 import React, { useEffect, useState } from 'react';
 import { Card, Divider } from 'antd';
-import { CodeBox, MyTitle } from '@components/index';
+import { CodeBox, LinkNote, MyTitle } from '@components/index';
 import { fabric } from 'fabric';
 import { funcToString } from '@utils/CommonFunc';
 
@@ -176,6 +176,22 @@ const Effect = () => {
       <MyTitle title="示例结果" />
       <CodeBox code={resultCode} />
       <canvas id="effect-canvas" />
+      <Divider />
+      <LinkNote
+        linkList={[{
+          name: '颜色 fabric.Color',
+          url: 'http://fabricjs.com/docs/fabric.Color.html'
+        }, {
+          name: '渐变 fabric.Gradient',
+          url: 'http://fabricjs.com/docs/fabric.Gradient.html'
+        }, {
+          name: '阴影 fabric.Shadow',
+          url: 'http://fabricjs.com/docs/fabric.Shadow.html'
+        }, {
+          name: '纹理 fabric.Pattern',
+          url: 'http://fabricjs.com/docs/fabric.Pattern.html'
+        }]}
+      />
     </Card>
   );
 };

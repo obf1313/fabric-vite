@@ -6,7 +6,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Divider, Row, Radio } from 'antd';
 import { fabric } from 'fabric';
-import { CodeBox, MyTitle } from '@components/index';
+import { CodeBox, LinkNote, MyTitle } from '@components/index';
 import { funcToString } from '@utils/CommonFunc';
 
 const Brush = () => {
@@ -102,19 +102,17 @@ const Brush = () => {
     <Card>
       <MyTitle title="涂鸦" />
       <p>fabric 封装好了画笔功能，我们在使用的时候对画笔进行一些配置即可使用。</p>
-      <div style={{ height: 280, overflow: 'auto' }}>
-        <MyTitle title="铅笔模式 PencilBrush" />
-        <CodeBox code={funcToString(initPencilBrush.toString())} />
-        <Divider />
-        <MyTitle title="圆圈模式 CircleBrush" />
-        <CodeBox code={funcToString(initCircleBrush.toString())} />
-        <Divider />
-        <MyTitle title="喷墨模式 SprayBrush" />
-        <CodeBox code={funcToString(initSprayBrush.toString())} />
-        <Divider />
-        <MyTitle title="图案笔刷 PatternBrush" />
-        <CodeBox code={funcToString(initPatternBrush.toString())} />
-      </div>
+      <MyTitle title="铅笔模式 PencilBrush" />
+      <CodeBox code={funcToString(initPencilBrush.toString())} />
+      <Divider />
+      <MyTitle title="圆圈模式 CircleBrush" />
+      <CodeBox code={funcToString(initCircleBrush.toString())} />
+      <Divider />
+      <MyTitle title="喷墨模式 SprayBrush" />
+      <CodeBox code={funcToString(initSprayBrush.toString())} />
+      <Divider />
+      <MyTitle title="图案笔刷 PatternBrush" />
+      <CodeBox code={funcToString(initPatternBrush.toString())} />
       <Divider />
       <MyTitle title="示例" />
       <Row style={{ marginBottom: 10 }}>
@@ -126,6 +124,22 @@ const Brush = () => {
         </Radio.Group>
       </Row>
       <canvas id="brush-canvas" />
+      <Divider />
+      <LinkNote
+        linkList={[{
+          name: '铅笔笔刷 fabric.PencilBrush',
+          url: 'http://fabricjs.com/docs/fabric.PencilBrush.html'
+        }, {
+          name: '圆圈笔刷 fabric.CircleBrush',
+          url: 'http://fabricjs.com/docs/fabric.CircleBrush.html'
+        }, {
+          name: '喷墨笔刷 fabric.SprayBrush',
+          url: 'http://fabricjs.com/docs/fabric.SprayBrush.html'
+        }, {
+          name: '图案笔刷 fabric.PatternBrush',
+          url: 'http://fabricjs.com/docs/fabric.PatternBrush.html'
+        }]}
+      />
     </Card>
   );
 };
