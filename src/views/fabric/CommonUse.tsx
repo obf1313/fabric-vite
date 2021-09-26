@@ -8,6 +8,8 @@ import { Card } from 'antd';
 import { MyTitle } from '@components/index';
 import { fabric } from 'fabric';
 
+let canPanning: boolean = false;
+
 const CommonUse = () => {
   const [fabricCanvas, setFabricCanvas] = useState<any>();
   useEffect(() => {
@@ -41,6 +43,14 @@ const CommonUse = () => {
   };
   // 监听
   const initListener = () => {
+    // 鼠标按下
+    fabricCanvas.on('mouse:down', (e: any) => {
+      // 按住alt键才可拖动画布
+      if (e.e.altKey) {
+        canPanning = true;
+      }
+    });
+    // 缩放
     fabricCanvas.on('mouse:wheel', (event: any) => {
       let zoom = (event.e.deltaY > 0 ? -0.1 : 0.1) + fabricCanvas.getZoom();
       zoom = Math.max(0.5, zoom); // 最小为原来的 1/2
@@ -48,10 +58,22 @@ const CommonUse = () => {
       const zoomPoint = new fabric.Point(event.pointer.x,event.pointer.y);
       fabricCanvas.zoomToPoint(zoomPoint, zoom);
     });
+    // 鼠标抬起
+    fabricCanvas.on('mouse:up', (e: any) => {
+      canPanning = false;
+    });
+    // 鼠标移动
+    fabricCanvas.on('mouse:move', (e: any) => {
+      if (canPanning && e && e.e) {
+        const delta = new fabric.Point(e.e.movementX, e.e.movementY);
+        fabricCanvas.relativePan(delta);
+      }
+    });
   };
   return (
     <Card>
-      <MyTitle title="画布缩放" />
+      <MyTitle title="画布缩放位移" />
+      <p>滑动鼠标滚轮可缩放，按住 alt 键拖动画布可平移。</p>
       <canvas id="common-canvas" />
     </Card>
   );
