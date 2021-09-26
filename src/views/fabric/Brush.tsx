@@ -99,9 +99,10 @@ const Brush = () => {
   };
   return (
     <Card>
-      <div style={{ height: 300, overflow: 'auto' }}>
+      <MyTitle title="涂鸦" />
+      <p>fabric 封装好了画笔功能，我们在使用的时候对画笔进行一些配置即可使用。</p>
+      <div style={{ height: 280, overflow: 'auto' }}>
         <MyTitle title="铅笔模式 PencilBrush" />
-        <p>fabric 封装好了画笔功能，我们在使用的时候对画笔进行一些配置即可使用。</p>
         <CodeBox code={funcToString(initPencilBrush.toString())} />
         <Divider />
         <MyTitle title="圆圈模式 CircleBrush" />
