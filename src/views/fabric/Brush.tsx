@@ -31,8 +31,8 @@ const Brush = () => {
   // 笔刷改变
   const onBrushChange = (e: any) => {
     switch (e.target.value) {
-      case 'pencil':
       default:
+      case 'pencil':
         initPencilBrush();
         break;
       case 'circle':
@@ -46,11 +46,11 @@ const Brush = () => {
         break;
     }
   };
-  // 开启铅笔模式
+  // 开启铅笔笔刷
   const initPencilBrush = () => {
     // 开启画布自由绘画模式
     fabricCanvas.isDrawingMode = true;
-    // 设置自由绘画模式画笔类型为 铅笔类型
+    // 设置自由绘画模式画笔类型为 铅笔笔刷
     // @ts-ignore
     fabricCanvas.freeDrawingBrush = new fabric.PencilBrush(fabricCanvas);
     // 设置自由绘画模式 画笔颜色与画笔线条大小
@@ -61,18 +61,18 @@ const Brush = () => {
   const initCircleBrush = () => {
     // 开启画布自由绘画模式
     fabricCanvas.isDrawingMode = true;
-    // 设置自由绘画模式画笔类型为 圆圈类型
+    // 设置自由绘画模式画笔类型为 圆圈笔刷
     // @ts-ignore
     fabricCanvas.freeDrawingBrush = new fabric.CircleBrush(fabricCanvas);
     // 设置自由绘画模式 画笔颜色与画笔线条大小
     fabricCanvas.freeDrawingBrush.color = '#000000';
     fabricCanvas.freeDrawingBrush.width = 4;
   };
-  // 开启喷墨模式
+  // 开启喷墨笔刷
   const initSprayBrush = () => {
     // 开启画布自由绘画模式
     fabricCanvas.isDrawingMode = true;
-    // 设置自由绘画模式画笔类型为 喷墨类型
+    // 设置自由绘画模式画笔类型为 喷墨笔刷
     // @ts-ignore
     fabricCanvas.freeDrawingBrush = new fabric.SprayBrush(fabricCanvas);
     // 设置自由绘画模式 画笔颜色与画笔线条大小
@@ -88,6 +88,7 @@ const Brush = () => {
       fabricCanvas.isDrawingMode = true;
       // @ts-ignore
       const patternBrush = new fabric.PatternBrush(fabricCanvas);
+      // 图案笔刷的来源
       // @ts-ignore
       patternBrush.source = img;
       // 设置自由绘画模式画笔类型为 图案笔刷
