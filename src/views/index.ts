@@ -16,4 +16,4 @@ export { default as GraphClass } from '@views/fabric/GraphClass';
 export { default as Listener } from '@views/fabric/Listener';
 export { default as Brush } from '@views/fabric/Brush';
 export { default as Effect } from '@views/fabric/Effect';
-export { default as Util } from '@views/fabric/Util';
+export { default as Serialize } from '@views/fabric/Serialize';

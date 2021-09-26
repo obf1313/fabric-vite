@@ -71,8 +71,8 @@ const Home = (props: IProps) => {
         url: 'effect',
       }, {
         id: '3-6',
-        name: '工具类',
-        url: 'util',
+        name: '序列化和反序列化',
+        url: 'serialize',
       }]
     }];
     setMenuList(menuList);
