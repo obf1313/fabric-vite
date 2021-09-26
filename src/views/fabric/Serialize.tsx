@@ -97,7 +97,7 @@ const Serialize = () => {
       <Divider />
       <MyTitle title="反序列化" />
       <p>
-        对于反序列化需要注意的是 loadFromJSON 对应 toJSON、loadFormDatalessJSON 对应 toDatalessJSON。
+        对于反序列化需要注意的是 loadFromJSON 对应 toJSON、loadFromDatalessJSON 对应 toDatalessJSON。
       </p>
       <p>
         但是由于性能考虑，不是所有属性都可以进行序列化, fabric 只是包装了一些常用的属性,所以如果设置了一些比较少用的属性,在加载 JSON 数据的时候需要重新修改图像的属性。
