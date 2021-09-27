@@ -10,7 +10,7 @@ import './index.less';
 const Welcome = () => {
   return (
     <PageHeader
-      title="Fabric.js 中文介绍，请点击右边目录查看详情。"
+      title="Fabric.js 中文介绍，请点击左边目录查看详情。"
       style={{ margin: '-10px -10px 10px -10px', backgroundColor: '#fff' }}
     />
   );
