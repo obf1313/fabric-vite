@@ -4,7 +4,7 @@
  * @createTime: 2021/9/24 13:59
  **/
 import React, { useEffect, useState } from 'react';
-import { Card, Divider } from 'antd';
+import { Button, Card, Divider } from 'antd';
 import { MyTitle, CodeBox, LinkNote } from '@components/index';
 import { fabric } from 'fabric';
 import { funcToString } from '@utils/CommonFunc';
@@ -149,6 +149,13 @@ const GraphClass = () => {
     path.set({ left: 120, top: 120, fill:'red' });
     fabricCanvas.add(path);
   };
+  const fill = () => {
+    const obj = fabricCanvas.getActiveObject();
+    if (obj) {
+      obj.set('fill', 'rgba(248,147,189,0.5)');
+      fabricCanvas.renderAll();
+    }
+  };
   return (
     <Card>
       <MyTitle title="图形类" />
@@ -184,6 +191,7 @@ const GraphClass = () => {
         <CodeBox code={funcToString(initPath.toString())} />
       </div>
       <Divider />
+      <Button onClick={fill} style={{ marginBottom: 10 }} type="primary">填充颜色</Button>
       <canvas id="graph-canvas" />
       <Divider />
       <LinkNote

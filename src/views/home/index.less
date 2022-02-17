@@ -61,3 +61,15 @@ input:-webkit-autofill:active {
   -webkit-transition-delay: 99999s;
   -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
 }
+// 滚动条样式
+* {
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: @primary-color-opacity-4;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px @primary-color-opacity-2;
+  background-color: @primary-color-opacity-2;
+}
